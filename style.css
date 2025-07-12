@@ -69,12 +69,20 @@ video {
 }
 
 .video-gallery {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  max-width: 1000px;
+  margin: 30px auto 0;
   gap: 20px;
-  justify-content: center;
-  margin-top: 30px;
+  justify-items: center;
 }
+
+@media (min-width: 1000px) {
+  .video-gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 
 .video-container {
   background-color: rgba(255, 255, 255, 0.9);
